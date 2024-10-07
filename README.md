@@ -1,5 +1,8 @@
 # :wind_face: Keywind
 
+Added feature for work with keycloak-phone-number-provider
+https://github.com/cooperlyt/keycloak-phone-provider
+
 Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
 
 ![Preview](./preview.png)

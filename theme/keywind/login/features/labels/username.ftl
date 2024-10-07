@@ -1,11 +1,23 @@
 <#macro kw>
   <#compress>
     <#if !realm.loginWithEmailAllowed>
-      ${msg("username")}
+      <#if loginWithPhoneNumber??>
+        ${msg("usernameOrPhoneNumber")}
+      <#else>
+        ${msg("username")}
+      </#if>
     <#elseif !realm.registrationEmailAsUsername>
-      ${msg("usernameOrEmail")}
+      <#if loginWithPhoneNumber??>
+        ${msg("usernameOrEmailOrPhoneNumber")}
+      <#else>
+        ${msg("usernameOrEmail")}
+      </#if>
     <#else>
-      ${msg("email")}
+      <#if loginWithPhoneNumber??>
+        ${msg("emailOrPhoneNumber")}
+      <#else>
+        ${msg("email")}
+      </#if>
     </#if>
   </#compress>
 </#macro>

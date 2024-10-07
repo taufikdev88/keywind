@@ -65,7 +65,7 @@
     </#if>
   </#assign>
 
-  <html<#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
+  <html <#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
     <head>
       <@document.kw script=script />
     </head>

@@ -2,11 +2,17 @@ import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 
 export default {
-  content: ['./theme/**/*.ftl'],
+  content: [
+    './theme/**/*.ftl',
+    "./node_modules/flowbite/**/*.js"
+  ],
   experimental: {
     optimizeUniversalDefaults: true,
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('flowbite/plugin')
+  ],
   theme: {
     extend: {
       colors: {

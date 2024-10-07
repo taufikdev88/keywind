@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "alpinejs": "^3.13.0",
+    "axios": "^1.7.7",
+    "flowbite": "^2.5.2",
+    "keywind": "file:",
     "rfc4648": "^1.5.2"
   },
   "devDependencies": {

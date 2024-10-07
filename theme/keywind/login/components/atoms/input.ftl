@@ -6,14 +6,18 @@
   autofocus=false
   class="block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
   disabled=false
+  disabled_function=""
   invalid=false
   label=""
   message=""
   name=""
   required=true
   type="text"
+  model=""
+  click=""
   rest...
 >
+
   <div>
     <label class="sr-only" for="${name}">
       ${label}
@@ -22,8 +26,12 @@
       <div class="relative" x-data="{ show: false }">
         <input
           <#if autofocus>autofocus</#if>
-          <#if disabled>disabled</#if>
           <#if required>required</#if>
+          <#if disabled_function?has_content>
+            x-bind:disabled='${disabled_function}'
+          <#elseif disabled>
+            disabled
+          </#if>
 
           aria-invalid="${invalid?c}"
           class="${class}"
@@ -54,8 +62,15 @@
     <#else>
       <input
         <#if autofocus>autofocus</#if>
-        <#if disabled>disabled</#if>
         <#if required>required</#if>
+        <#if model?has_content>x-model="${model}"</#if>
+        <#if click?has_content>x-on:click="${click}"</#if>
+        <#if disabled_function?has_content>
+          x-bind:disabled='${disabled_function}'
+          x-bind:class="${disabled_function} ? 'cursor-not-allowed opacity-50' : ''"
+        <#elseif disabled>
+          disabled
+        </#if>
 
         aria-invalid="${invalid?c}"
         class="${class}"

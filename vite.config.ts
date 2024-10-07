@@ -8,6 +8,8 @@ export default defineConfig({
         'src/data/recoveryCodes.ts',
         'src/data/webAuthnAuthenticate.ts',
         'src/data/webAuthnRegister.ts',
+        'src/data/phoneNumberVerificationCode.ts',
+        'node_modules/flowbite/dist/flowbite.min.js',
       ],
       output: {
         assetFileNames: '[name][extname]',

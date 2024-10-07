@@ -6,21 +6,18 @@
 <#import "components/atoms/input.ftl" as input>
 
 <@layout.registrationLayout
-  displayMessage=!messagesPerField.existsError("password", "password-confirm")
-  ;
-  section
->
+  displayMessage=!messagesPerField.existsError("password", "password-confirm"); section>
+
+  <#--  SECTION HEADER  -->
   <#if section="header">
     ${msg("updatePasswordTitle")}
+  <#--  FORM SECTION  -->
   <#elseif section="form">
     <@form.kw action=url.loginAction method="post">
-      <input
-        autocomplete="username"
-        name="username"
-        type="hidden"
-        value="${username}"
-      >
+      <#--  hidden forms  -->
+      <input autocomplete="username" name="username" type="hidden" value="${username}">
       <input autocomplete="current-password" name="password" type="hidden">
+      <#--  new password  -->
       <@input.kw
         autocomplete="new-password"
         autofocus=true
@@ -29,6 +26,7 @@
         name="password-new"
         type="password"
       />
+      <#--  password confirm  -->
       <@input.kw
         autocomplete="new-password"
         invalid=messagesPerField.existsError("password-confirm")
@@ -38,6 +36,7 @@
         type="password"
       />
       <#if isAppInitiatedAction??>
+        <#--  logout other sessions checkbox  -->
         <@checkbox.kw
           checked=true
           label=msg("logoutOtherSessions")
@@ -45,6 +44,7 @@
           value="on"
         />
       </#if>
+      <#--  button submit and cancel  -->
       <@buttonGroup.kw>
         <#if isAppInitiatedAction??>
           <@button.kw color="primary" type="submit">
