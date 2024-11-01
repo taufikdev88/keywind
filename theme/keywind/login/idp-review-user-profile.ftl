@@ -8,7 +8,7 @@
   displayMessage=!messagesPerField.existsError("email", "firstName", "lastName", "username"); section>
 
   <#if section="header">
-    ${msg("loginProfileTitle")}
+    ${msg("loginIdpReviewProfileTitle")}
   <#elseif section="form">
     <@form.kw action=url.loginAction method="post">
       <#if user.editUsernameAllowed>
@@ -51,18 +51,9 @@
         value=(user.lastName)!''
       />
       <@buttonGroup.kw>
-        <#if isAppInitiatedAction??>
-          <@button.kw color="primary" type="submit">
-            ${msg("doSubmit")}
-          </@button.kw>
-          <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
-            ${msg("doCancel")}
-          </@button.kw>
-        <#else>
-          <@button.kw color="primary" type="submit">
-            ${msg("doSubmit")}
-          </@button.kw>
-        </#if>
+        <@button.kw color="primary" type="submit">
+          ${msg("doSubmit")}
+        </@button.kw>
       </@buttonGroup.kw>
     </@form.kw>
   </#if>
