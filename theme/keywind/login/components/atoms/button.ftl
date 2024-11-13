@@ -6,6 +6,9 @@
     <#case "secondary">
       <#assign colorClass="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900">
       <#break>
+    <#case "danger">
+      <#assign colorClass="bg-red-600 text-white focus:ring-red-600 hover:bg-red-700">
+      <#break>
     <#default>
       <#assign colorClass="bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700">
   </#switch>
