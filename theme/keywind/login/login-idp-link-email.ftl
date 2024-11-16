@@ -1,4 +1,4 @@
-<#import "template.ftl" as layout"
+<#import "template.ftl" as layout>
 
 <#import "components/atoms/link.ftl" as link>
 
