@@ -15,6 +15,7 @@
   type="text"
   model=""
   click=""
+  readonly=false
   rest...
 >
 
@@ -71,6 +72,7 @@
         <#elseif disabled>
           disabled
         </#if>
+        <#if readonly>readonly</#if>
 
         aria-invalid="${invalid?c}"
         class="${class}"

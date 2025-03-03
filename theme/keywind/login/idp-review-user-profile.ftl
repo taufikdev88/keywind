@@ -20,7 +20,7 @@
           message=kcSanitize(messagesPerField.get("username"))
           name="username"
           type="text"
-          value=(user.username)!''
+          value=(user.getUsername())!''
         />
       </#if>
       <@input.kw
@@ -30,7 +30,7 @@
         message=kcSanitize(messagesPerField.get("email"))
         name="email"
         type="email"
-        value=(user.email)!''
+        value=(user.getEmail())!''
       />
       <@input.kw
         autocomplete="given-name"
@@ -39,7 +39,7 @@
         message=kcSanitize(messagesPerField.get("firstName"))
         name="firstName"
         type="text"
-        value=(user.firstName)!''
+        value=(user.getFirstName())!''
       />
       <@input.kw
         autocomplete="family-name"
@@ -48,7 +48,7 @@
         message=kcSanitize(messagesPerField.get("lastName"))
         name="lastName"
         type="text"
-        value=(user.lastName)!''
+        value=(user.getLastName())!''
       />
       <@buttonGroup.kw>
         <@button.kw color="primary" type="submit">
