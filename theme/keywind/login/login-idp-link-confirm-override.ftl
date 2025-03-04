@@ -1,17 +1,17 @@
 <#import "template.ftl" as layout>
+
 <#import "components/atoms/button.ftl" as button>
 <#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/link.ftl" as link>
 
 <@layout.registrationLayout; section>
   <#if section="header">
-    ${msg("confirmLinkIdpTitle")}
+    ${msg("confirmOverrideIdpTitle")}
   <#elseif section="form">
     <@form.kw action=url.loginAction method="post">
-      <#--  <@button.kw color="primary" name="submitAction" type="submit" value="updateProfile">
-        ${msg("confirmLinkIdpReviewProfile")}
-      </@button.kw>  -->
-      <@button.kw color="primary" name="submitAction" type="submit" value="linkAccount">
-        ${msg("confirmLinkIdpContinue", idpDisplayName)}
+      ${msg("pageExpiredMsg1")} <@link.kw href=url.loginRestartFlowUrl>${msg("doClickHere")}</@link.kw>
+      <@button.kw color="primary" name="submitAction" type="submit" value="confirmOverride">
+        ${msg("confirmOverrideIdpContinue", idpDisplayName)}
       </@button.kw>
     </@form.kw>
   </#if>
