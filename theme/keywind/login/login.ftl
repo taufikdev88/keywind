@@ -92,7 +92,8 @@
                 <#if realm.rememberMe && !usernameEditDisabled?? || realm.resetPasswordAllowed>
                   <div class="flex items-center justify-between">
                     <#if realm.rememberMe && !usernameEditDisabled??>
-                      <@checkbox.kw checked=login.rememberMe?? label=msg("rememberMe") name="rememberMe" />
+                      <#--  <@checkbox.kw checked=login.rememberMe?? label=msg("rememberMe") name="rememberMe" />  -->
+                      <input type="hidden" name="rememberMe" value="on" />
                     </#if>
                     <#if realm.resetPasswordAllowed>
                       <@link.kw color="primary" href=url.loginResetCredentialsUrl size="small">${msg("doForgotPassword")}</@link.kw>
