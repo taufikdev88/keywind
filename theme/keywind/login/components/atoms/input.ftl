@@ -8,6 +8,7 @@
   disabled=false
   disabled_function=""
   invalid=false
+  placeholder=""
   label=""
   message=""
   name=""
@@ -18,6 +19,11 @@
   readonly=false
   rest...
 >
+  <#if placeholder?has_content>
+    <#assign ph = placeholder>
+  <#else>
+    <#assign ph = label>
+  </#if>
 
   <div>
     <label class="sr-only" for="${name}">
@@ -38,7 +44,7 @@
           class="${class}"
           id="${name}"
           name="${name}"
-          placeholder="${label}"
+          placeholder="${ph}"
           :type="show ? 'text' : 'password'"
 
           <#list rest as attrName, attrValue>
@@ -78,7 +84,7 @@
         class="${class}"
         id="${name}"
         name="${name}"
-        placeholder="${label}"
+        placeholder="${ph}"
         type="${type}"
 
         <#list rest as attrName, attrValue>

@@ -152,6 +152,22 @@
           </#if>
         </#if>
 
+        <#if referralCode??>
+          <#-- referral code form  -->
+          <@input.kw
+            autocomplete="referral-code"
+            autofocus=true
+            invalid=messagesPerField.existsError("referralCode")
+            label=msg("referralCode")
+            message=kcSanitize(messagesPerField.get("referralCode"))
+            name="referralCode"
+            type="text"
+            value=(register.formData.referralCode)!''
+            required=(referralCodeRequired)
+            placeholder=(referralCodeRequired?string(msg("referralCode")?string, msg("optionalReferralCode")?string))
+          />
+        </#if>
+
         <#if recaptchaRequired??>
           <#--  rechapta  -->
           <div class="g-recaptcha" data-sitekey="${recaptchaSiteKey}" data-size="compact"></div>
